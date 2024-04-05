@@ -1,0 +1,116 @@
+<html>
+	<head>
+		<script>
+			function FORM() {
+				var name =
+					document.forms.RegForm.Name.value;
+				var phone =
+					document.forms.RegForm.Telephone.value;
+				
+				var last =
+					document.forms.RegForm.Last.value;
+				var regEmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g; //Javascript reGex for Email Validation.
+				var regPhone=/^\d{10}$/;									 // Javascript reGex for Phone Number validation.
+				var regName = /\d+$/g;								 // Javascript reGex for Name validation
+
+				if (name == "" || regName.test(name)) {
+					window.alert("Please enter your name properly.");
+					name.focus();
+					return false;
+				}
+
+				if (last == "") {
+					window.alert("Please enter your address.");
+					last.focus();
+					return false;
+				}
+				
+				if (email == "" || !regEmail.test(email)) {
+					window.alert("Please enter a valid e-mail address.");
+					email.focus();
+					return false;
+				}
+				
+				
+				if (phone == "" || !regPhone.test(phone)) {
+					alert("Please enter valid phone number.");
+					phone.focus();
+					return false;
+				}
+
+
+				return true;
+			}
+		</script>
+
+		<style>
+			div {
+				box-sizing: border-box;
+				width: 100%;
+				border: 100px solid black;
+				    float: left;
+                align-content: center;
+                align-items: center;
+            }
+			body {
+				text-align: center;
+				background-image: url('form1.jpg');
+				background-repeat: no-repeat;
+				background-attachment: fixed;  
+			background-size: cover;
+				}
+				
+ 
+            p{font-size:20;}
+			
+
+			
+		</style>
+	</head>
+
+	<body>
+	
+		<h1 style="text-align: center; font-size:40">FEEDBACK </h1>
+		<table border="2"><form name="RegForm" onsubmit="return FORM()" method="post">
+	<br>		
+<p>First Name: <input type="text"
+							size="65" name="Name" /></p>
+
+			<br />
+			
+<p>Last Name: <input type="text"
+							size="65" name="Last" />
+		</p>
+
+			<br />
+			
+<p>E-mail Address: <input type="text"
+							size="65" name="EMail" /></p>
+
+			<br />
+			
+
+			
+<p>Telephone: <input type="text"
+						size="65" name="Telephone" /></p>
+
+			<br />
+
+			
+
+			
+<p>Comments: <textarea cols="55"
+							name="Comment"> </textarea></p>
+
+			
+<p>
+				<input type="submit"
+					value="send" name="Submit" />
+				<input type="reset"
+					value="Reset" name="Reset" />
+			</p>
+
+		</form>
+		</table>
+	</body>
+</html>
